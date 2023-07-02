@@ -20,7 +20,11 @@
 const std = @import("std");
 
 // Please complete the enum!
-const Ops = enum { ??? };
+const Ops = enum {
+    inc,
+    dec,
+    pow,
+};
 
 pub fn main() void {
     const operations = [_]Ops{
@@ -46,6 +50,7 @@ pub fn main() void {
                 current_value *= current_value;
             },
             // No "else" needed! Why is that?
+            //Answer: Because we have an enum, and the compiler knows that, we have all the possible values.
         }
 
         std.debug.print("{} ", .{current_value});
