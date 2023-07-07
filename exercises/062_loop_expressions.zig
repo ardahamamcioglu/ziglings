@@ -26,7 +26,7 @@
 //
 //     const four: u8 = while (true) {
 //         break 4;
-//     };               // <-- ERROR! Implicit 'else void' here!
+//     };               // <-- ERROR! Implicit 'else null' here!
 //
 // With that in mind, see if you can fix the problem with this
 // program.
@@ -47,7 +47,7 @@ pub fn main() void {
     // return it from the for loop.
     const current_lang: ?[]const u8 = for (langs) |lang| {
         if (lang.len == 3) break lang;
-    };
+    } else null;
 
     if (current_lang) |cl| {
         print("Current language: {s}\n", .{cl});
